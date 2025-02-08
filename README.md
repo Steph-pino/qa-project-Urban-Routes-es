@@ -15,8 +15,15 @@ El objetivo de estas pruebas es asegurar que el proceso de solicitud de taxi fun
 # Tecnologías Utilizadas
 
 - **Python**: Lenguaje de programación principal del proyecto.
-- **Selenium**: Entorno de pruebas utilizado para automatizar y gestionar las pruebas.
+- **Pytest**: Entorno de pruebas utilizado para automatizar y gestionar las pruebas.
+- **Selenium**: Herramienta para simular la interacción del usuario con la web de Urban Routes.
 - **Devtools**: Para identificar los localizadores desde Chrome.
+
+# Ejecución de pruebas
+- Asegúrate de tener instalados los paquetes pytest y Selenium.
+- Las pruebas utilizarán el navegador Chrome, así que asegúrate de tenerlo instalado. 
+- Para ejecutar las pruebas asegúrate de estar en el directorio "test.py", donde se encuentran las pruebas. Luego, ejecuta las pruebas utilizando pytest
+- Al finalizar las pruebas, pytest mostrará un resumen de los resultados en la terminal.
 
 # Funcionalidad de las pruebas:
 Las pruebas automatizadas cubren los siguientes pasos del flujo de solicitud de un taxi:
