@@ -34,6 +34,14 @@ class TestUrbanRoutes:
         routes_page.set_route(data.address_from, data.address_to)
         routes_page.click_pedir_un_taxi()
 
+    def test_select_comfort_tariff(self):
+        self.driver.get(data.urban_routes_url)
+        routes_page = UrbanRoutesPage(self.driver)
+        routes_page.set_comfort_tariff()
+
+
+
+
 
 
     @classmethod

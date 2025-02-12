@@ -4,7 +4,7 @@ class Locators:
     from_field = (By.ID, 'from')
     to_field = (By.ID, 'to')
     button_pedir_un_taxi = (By.XPATH, "//button[contains(text(), 'Pedir un taxi')]")
-    comfort_card = (By.XPATH, '//button[@data-for="tariff-card-4"]')
+    comfort_card = (By.XPATH, "//div[@class='tcard'][4]")
     phone_number_field = (By.CLASS_NAME, "np-text")
 
     phone_number_field_popup =(By.ID, "phone")
@@ -20,5 +20,5 @@ class Locators:
     agregar_button = (By.XPATH, "//button[text()='Agregar']")
 
     message_for_driver_field = (By.ID, "comment")
-    manta_y_panuelos_slider = (By.XPATH, "//*[@id='root']/div/div[3]/div[3]/div[2]/div[2]/div[4]/div[2]/div[1]/div/div[2]/div/span")
+    manta_y_panuelos_slider = (By.XPATH, "//input[@class='switch-input'])[2]")
     plus_icecream = (By.XPATH, "//*[@id='root']/div/div[3]/div[3]/div[2]/div[2]/div[4]/div[2]/div[3]/div/div[2]/div[1]/div/div[2]/div/div[3]")
