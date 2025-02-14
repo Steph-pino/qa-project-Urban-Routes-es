@@ -1,5 +1,4 @@
 from localizadores import Locators
-from selenium import webdriver
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 import data
@@ -56,58 +55,71 @@ class UrbanRoutesPage:
         WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(Locators.button_pedir_un_taxi)).click()
 
     def set_comfort_tariff(self):
-        self.driver.find_element(Locators.comfort_card).click()
-        WebDriverWait(self.driver, 10)
+        WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(Locators.comfort_card)).click()
 
     def set_phone_number(self, phone_number):
         wait = WebDriverWait(self.driver, 10)
-
         wait.until(EC.element_to_be_clickable(Locators.phone_number_field)).click()
-        self.driver.find_element(Locators.phone_number_field_popup).send_keys(phone_number)
+        wait.until(EC.element_to_be_clickable(Locators.phone_number_field_popup)).send_keys(phone_number)
         wait.until(EC.element_to_be_clickable(Locators.Siguiente_button)).click()
 
         phone_code = retrieve_phone_code(self.driver)
-        self.driver.find_element(Locators.codigo_sms_field).send_keys(phone_code)
+        wait.until(EC.element_to_be_clickable(Locators.codigo_sms_field)).send_keys(phone_code)
         wait.until(EC.element_to_be_clickable(Locators.Confirmar_button)).click()
 
+    def open_payment_method_popup(self):
+        WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(Locators.payment_method_button)).click()
+
+    def click_agregar_tarjeta(self):
+        WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(Locators.agregar_tarjeta_button)).click()
 
     def get_card_field(self):
-        return self.driver.find_element(Locators.card_number_field)
+        return WebDriverWait(self.driver, 5).until(
+            EC.presence_of_element_located(Locators.card_number_field))
 
     def set_card_number(self, card_number):
-        self.get_card_field().send_keys(card_number)
+        WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(Locators.card_number_field)).send_keys(card_number)
 
     def get_cvv_field(self):
-        return self.driver.find_element(Locators.cvv_field)
+        return WebDriverWait(self.driver, 5).until(
+            EC.presence_of_element_located(Locators.cvv_field))
 
     def set_cvv_number(self, cvv_number):
-        self.get_cvv_field().send_keys(cvv_number)
+        WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(Locators.cvv_field)).send_keys(cvv_number)
 
-    def set_agregar_button(self):
-        self.driver.find_element(Locators.cvv_field).send_keys(Keys.TAB)
+    def click_agregar_button(self):
+        #self.driver.find_element(Locators.cvv_field).send_keys(Keys.TAB)
+        return WebDriverWait(self.driver, 10).until(
+            EC.element_to_be_clickable(Locators.agregar_button)
+        ).click()
+
+    def close_popup_payment_method(self):
         WebDriverWait(self.driver, 10).until(
-            EC.element_to_be_clickable(Locators.agregar_button)).click()
-
-    def open_add_payment_method_popup(self):
-        self.driver.find_element(Locators.payment_method_field).click()
-
-    def set_payment_method(self, card_number, cvv_number):
-        self.open_add_payment_method_popup()
-        self.set_card_number(card_number)
-        current_card_number = self.get_card_field().get_property('value')
-        assert data.card_number == current_card_number
-        self.set_cvv_number(cvv_number)
-        self.set_agregar_button()
+            EC.element_to_be_clickable(Locators.close_button_popup)).click()
 
     def set_mensaje_al_conductor(self, message):
         WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(Locators.message_for_driver_field)).send_keys(message)
 
-    def set_manta_y_pañuelos(self):
-        WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(Locators.manta_y_panuelos_slider)).click()
+    def get_mensaje_al_conductor(self):
+        return WebDriverWait(self.driver, 5).until(
+            EC.presence_of_element_located(Locators.message_for_driver_field)).get_attribute("value")
+
+    def click_requisitos_pedido(self):
+        WebDriverWait(self.driver, 10).until(
+            EC.element_to_be_clickable(Locators.requisitos_button)).click()
+
+    def set_manta_y_panuelos(self):
+        WebDriverWait(self.driver, 10).until(
+            EC.visibility_of_element_located(Locators.manta_y_panuelos_slider)).click()
 
     def set_icecream(self):
         WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(Locators.plus_icecream)).click()
         WebDriverWait(self.driver, 5).until(EC.visibility_of_element_located(Locators.plus_icecream)).click()
+
+    def click_pedir_un_taxi_final(self):
+        WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(Locators.pedir_un_taxi_last_button)).click()
+
+
 
 
 
