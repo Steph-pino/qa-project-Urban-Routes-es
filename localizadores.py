@@ -21,6 +21,6 @@ class Locators:
 
     message_for_driver_field = (By.ID, "comment")
     requisitos_button = (By.CLASS_NAME, "reqs-head")
-    manta_y_panuelos_slider = (By.XPATH, "//input[@class='switch-input'])[2]")
+    manta_y_panuelos_slider = (By.XPATH, "//*[@id='root']/div/div[3]/div[3]/div[2]/div[2]/div[4]/div[2]/div[1]/div/div[2]/div/span")
     plus_icecream = (By.XPATH, "//*[@id='root']/div/div[3]/div[3]/div[2]/div[2]/div[4]/div[2]/div[3]/div/div[2]/div[1]/div/div[2]/div/div[3]")
-    pedir_un_taxi_last_button = (By.CLASS_NAME, "smart-button")
+    pedir_un_taxi_last_button = (By.XPATH, "//*[@id='root']/div/div[3]/div[4]")

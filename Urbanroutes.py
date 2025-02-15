@@ -117,7 +117,7 @@ class UrbanRoutesPage:
         WebDriverWait(self.driver, 5).until(EC.visibility_of_element_located(Locators.plus_icecream)).click()
 
     def click_pedir_un_taxi_final(self):
-        WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(Locators.pedir_un_taxi_last_button)).click()
+        WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(Locators.pedir_un_taxi_last_button)).click()
 
 
 
