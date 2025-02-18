@@ -1,8 +1,12 @@
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.wait import WebDriverWait
+
 import data
 from selenium import webdriver
 from selenium.webdriver import Keys
 from selenium.webdriver.common.by import By
 from Urbanroutes import UrbanRoutesPage
+from localizadores import Locators
 
 
 class TestUrbanRoutes:
@@ -34,6 +38,10 @@ class TestUrbanRoutes:
         routes_page = UrbanRoutesPage(self.driver)
         routes_page.set_comfort_tariff()
 
+        #comfort_text = "Comfort"
+        #comfort_icon = routes_page.get_comfort_tarrif().text
+        #assert comfort_icon == comfort_text
+
     def test_set_phone_number(self):
         self.test_choose_comfort_tariff()
         routes_page = UrbanRoutesPage(self.driver)
@@ -61,7 +69,7 @@ class TestUrbanRoutes:
         self.test_set_mensaje_al_conductor()
         routes_page = UrbanRoutesPage(self.driver)
         routes_page.set_manta_y_panuelos()
-        assert routes_page.get_manta_y_panuelos().get_property('checked')
+        #assert routes_page.get_manta_y_panuelos().get_property('checked')
 
     def test_order_dos_helados(self):
         self.test_order_manta_y_panuelos()

@@ -31,6 +31,10 @@ class UrbanRoutesPage:
     def set_comfort_tariff(self):
         WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(Locators.comfort_card)).click()
 
+    def get_comfort_tarrif(self):
+        return WebDriverWait(self.driver, 5).until(
+            EC.presence_of_element_located(Locators.comfort_card))
+
     def set_phone_number(self, phone_number):
         wait = WebDriverWait(self.driver, 10)
         wait.until(EC.element_to_be_clickable(Locators.phone_number_field)).click()
@@ -95,7 +99,7 @@ class UrbanRoutesPage:
         WebDriverWait(self.driver, 5).until(EC.visibility_of_element_located(Locators.plus_icecream)).click()
 
     def click_pedir_un_taxi_final(self):
-        WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(Locators.pedir_un_taxi_last_button)).click()
+        WebDriverWait(self.driver, 20).until(EC.visibility_of_element_located(Locators.pedir_un_taxi_last_button)).click()
 
 
 
