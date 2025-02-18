@@ -38,9 +38,9 @@ class TestUrbanRoutes:
         routes_page = UrbanRoutesPage(self.driver)
         routes_page.set_comfort_tariff()
 
-        #comfort_text = "Comfort"
-        #comfort_icon = routes_page.get_comfort_tarrif().text
-        #assert comfort_icon == comfort_text
+        comfort_text = "Comfort"
+        comfort_icon = routes_page.get_comfort_tarrif().text
+        assert comfort_text in comfort_icon
 
     def test_set_phone_number(self):
         self.test_choose_comfort_tariff()
