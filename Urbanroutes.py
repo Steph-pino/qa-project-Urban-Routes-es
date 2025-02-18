@@ -86,6 +86,10 @@ class UrbanRoutesPage:
         WebDriverWait(self.driver, 10).until(
             EC.visibility_of_element_located(Locators.manta_y_panuelos_slider)).click()
 
+    def get_manta_y_panuelos(self):
+        return WebDriverWait(self.driver, 5).until(
+            EC.visibility_of_element_located(Locators.manta_y_panuelos_slider))
+
     def set_icecream(self):
         WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(Locators.plus_icecream)).click()
         WebDriverWait(self.driver, 5).until(EC.visibility_of_element_located(Locators.plus_icecream)).click()

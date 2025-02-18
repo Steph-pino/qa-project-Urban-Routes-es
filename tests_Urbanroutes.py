@@ -61,6 +61,7 @@ class TestUrbanRoutes:
         self.test_set_mensaje_al_conductor()
         routes_page = UrbanRoutesPage(self.driver)
         routes_page.set_manta_y_panuelos()
+        assert routes_page.get_manta_y_panuelos().get_property('checked')
 
     def test_order_dos_helados(self):
         self.test_order_manta_y_panuelos()
