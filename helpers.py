@@ -7,11 +7,14 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 class Helpers:
 
+    @staticmethod
     def retrieve_phone_code(driver) -> str:
         """FRANCIELE FERREIRA, esta separación no la explican, y al poner este metodo en otro archivo y en otra clase.
-        me marca error. Le dejo este mensaje que espero lea y me ayude con la solucion porque
-        También me di cuenta que no revisó nada de mi proyecto porque lo tenia en otra branch.
-        Lo que marca amarillo: str, get_log y execute_cdp_cmd no tengo ni idea cómo resolverlo"""
+        me marca error. Acabo de revisar con Ramses para ponerle ese @ y quitaron las alertas en get_log y
+        execute_cdp_cmd sin embargo sigue "str" marcado.
+        De nuevo recalco algo que me parece muy mal que se pida y no se explique.
+        Le dejo este mensaje que espero lea y me ayude con la solucion o explicación a ese "str"
+        También me di cuenta que no revisó nada de mi proyecto porque lo tenia en otra branch."""
 
         import json
         import time
