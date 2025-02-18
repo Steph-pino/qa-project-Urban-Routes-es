@@ -2,8 +2,6 @@ from localizadores import Locators
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 import helpers
-from selenium.webdriver.common.keys import Keys
-
 
 
 class UrbanRoutesPage:
