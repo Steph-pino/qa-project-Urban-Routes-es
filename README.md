@@ -9,8 +9,9 @@ El objetivo de estas pruebas es asegurar que el proceso de solicitud de taxi fun
 # Archivos y directorios:
 - data.py: Datos que se utilizan en las pruebas.
 - localizadores.py: Archivo que contiene los localizadores de cada uno de los elementos de la página.
-- tests.py: Contiene la lista de comprobación para las pruebas.
+- tests_Urbanroutes.py: Contiene la lista de comprobación para las pruebas.
 - Urbanroutes.py: Archivo con los métodos utilizados en las pruebas.
+- helpers.py: Archivo con la clase de métodos auxiliares.
 
 # Tecnologías Utilizadas
 
@@ -20,9 +21,10 @@ El objetivo de estas pruebas es asegurar que el proceso de solicitud de taxi fun
 - **Devtools**: Para identificar los localizadores desde Chrome.
 
 # Ejecución de pruebas
+- Ruta de archivo: Users/stephaniepino/PycharmProjects/qa-project-Urban-Routes-es-main
 - Asegúrate de tener instalados los paquetes pytest y Selenium.
 - Las pruebas utilizarán el navegador Chrome, así que asegúrate de tenerlo instalado. 
-- Para ejecutar las pruebas asegúrate de estar en el directorio "test.py", donde se encuentran las pruebas. Luego, ejecuta las pruebas utilizando pytest
+- Para ejecutar las pruebas asegúrate de estar en el directorio "tests_Urbanroutes.py", donde se encuentran las pruebas. Luego, ejecuta las pruebas utilizando pytest
 - Al finalizar las pruebas, pytest mostrará un resumen de los resultados en la terminal.
 
 # Funcionalidad de las pruebas:
