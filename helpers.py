@@ -8,9 +8,10 @@ from selenium.webdriver.support.wait import WebDriverWait
 class Helpers:
 
     def retrieve_phone_code(driver) -> str:
-        """Este código devuelve un número de confirmación de teléfono y lo devuelve como un string.
-    Utilízalo cuando la aplicación espere el código de confirmación para pasarlo a tus pruebas.
-    El código de confirmación del teléfono solo se puede obtener después de haberlo solicitado en la aplicación."""
+        """FRANCIELE FERREIRA, esta separación no la explican, y al poner este metodo en otro archivo y en otra clase.
+        me marca error. También me di cuenta que no revisó nada de mi proyecto porque lo tenia en otra branch,
+         así que aqui le dejo este mensaje que espero lea y me ayude con la solucion
+         pues lo que marca amarillo: str, get_log y execute_cdp_cmd no tengo ni idea cómo resolverlo"""
 
         import json
         import time
