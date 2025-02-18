@@ -9,9 +9,9 @@ class Helpers:
 
     def retrieve_phone_code(driver) -> str:
         """FRANCIELE FERREIRA, esta separación no la explican, y al poner este metodo en otro archivo y en otra clase.
-        me marca error. También me di cuenta que no revisó nada de mi proyecto porque lo tenia en otra branch,
-         así que aqui le dejo este mensaje que espero lea y me ayude con la solucion
-         pues lo que marca amarillo: str, get_log y execute_cdp_cmd no tengo ni idea cómo resolverlo"""
+        me marca error. Le dejo este mensaje que espero lea y me ayude con la solucion porque
+        También me di cuenta que no revisó nada de mi proyecto porque lo tenia en otra branch.
+        Lo que marca amarillo: str, get_log y execute_cdp_cmd no tengo ni idea cómo resolverlo"""
 
         import json
         import time
